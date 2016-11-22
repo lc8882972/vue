@@ -7,7 +7,9 @@
         <li><router-link :to="{ name: 'first' }">first</router-link></li>
         <li><router-link :to="{ name: 'second' }">second</router-link></li>
         <li><router-link :to="{ name: 'counter' }">counter</router-link></li>
-        <li><router-link :to="{ name: 'user', params: { id: 123 }}">bar</router-link></li>
+        <li><router-link :to="{ name: 'user', params: { id: 123 }}">user</router-link></li>
+        <li><router-link :to="{ name: 'func' }">func</router-link></li>
+        <li><router-link :to="{ name: 'parent' }">parent</router-link></li>
     </ul>
     <router-view class="view"></router-view>
   </div>

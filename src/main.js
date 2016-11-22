@@ -3,7 +3,9 @@ import VueRouter from "vue-router";
 import Vuex from 'vuex'
 import App from './App.vue';
 import Counter from './Counter.vue';
+import Func from './func.vue';
 import secondcomponent from './Second.Component.vue';
+import Parent from './Parent.vue';
 import store from './store';
 //开启debug模式
 Vue.config.debug = true;
@@ -23,10 +25,12 @@ const router = new VueRouter({
   base: __dirname,
   routes: [
     { path: '/', name: 'home', component: Home },
-     { path: '/first', name: 'first', component: First },
+    { path: '/first', name: 'first', component: First },
     { path: '/second', name: 'second', component: secondcomponent },
     { path: '/counter', name: 'counter', component: Counter },
-    { path: '/user/:id', name: 'user', component: User }
+    { path: '/user/:id', name: 'user', component: User },
+    { path: '/func', name: 'func', component: Func },
+    { path: '/parent', name: 'parent', component: Parent }
   ]
 })
 
