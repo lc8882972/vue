@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import child from './Child.vue'
+import child from './Child.vue';
+import Bus from './bus';
 export default {
   data(){
     return {
@@ -15,6 +16,13 @@ export default {
   },
    components: {
       abc:child
+   },
+   methods:{
+   },
+   mounted:function(){
+     Bus.$on('test',msg=>{
+       console.log(msg);
+     })
    }
 }
 </script>

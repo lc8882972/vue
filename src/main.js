@@ -34,11 +34,11 @@ const router = new VueRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  console.log(to);
-  console.log(from);
-  next();
-})
+// router.beforeEach((to, from, next) => {
+//   console.log(to);
+//   console.log(from);
+//   next();
+// })
 
 // 现在我们可以启动应用了！
 // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
@@ -48,3 +48,10 @@ const app = new Vue({
   render: h => h(App)
 }).$mount('#app')
 
+app.$on('test', function (msg) {
+  console.log(msg)
+})
+
+app.$emit('test', 'hi');
+
+console.log(app);
