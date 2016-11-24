@@ -1,14 +1,17 @@
 import Vue from 'vue';
 import VueRouter from "vue-router";
 import Vuex from 'vuex'
+// import  Rx from 'Rx.js';
+
+/* ---- vue component ----- */
 import App from './App.vue';
 import Counter from './Counter.vue';
 import Func from './func.vue';
 import secondcomponent from './Second.Component.vue';
 import Parent from './Parent.vue';
 import store from './store';
-//开启debug模式
-Vue.config.debug = true;
+/* ---- vue component ----- */
+
 Vue.use(VueRouter);
 Vue.use(Vuex);
 

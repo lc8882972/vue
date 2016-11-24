@@ -9,8 +9,10 @@
     "server": "http-server"
   },
   "dependencies": {
+    "rxjs": "^5.0.0-rc.3",
     "vue": "^2.0.1",
     "vue-router": "^2.0.3",
+    "vue-rx": "^2.2.0",
     "vuex": "^2.0.0"
   },
   "devDependencies": {
