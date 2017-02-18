@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import child from './Child.vue';
-import Bus from './bus';
+import child from './child.vue';
+import Bus from '../bus';
 export default {
   data(){
     return {

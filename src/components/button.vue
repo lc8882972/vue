@@ -1,8 +1,5 @@
 <template>
-    <div>
-        <p>{{msg}}</p>
-        <button @click="bar()">bar()</button>
-    </div>
+    <a href="javascript:;" class="weui-btn weui-btn_primary">页面主操作 Normal</a>
 </template>
 
 <script>
