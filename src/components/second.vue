@@ -22,7 +22,8 @@ export default {
   },
 }
 </script>
-
-<style>
-
+<style lang="sass">
+     #secondcomponent{
+       background: #000;
+     }
 </style>

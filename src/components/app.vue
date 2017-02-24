@@ -28,8 +28,8 @@
     }
 </script>
 
-<style>
-
+<style lang="sass">
+    @import '../assets/scss/global.css';
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -60,7 +60,7 @@
     
     .pages {
         position: relative;
-        width: 375px;
+        width: 10rem;
     }
     
     .pages>div {

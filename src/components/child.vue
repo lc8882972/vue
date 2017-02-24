@@ -16,8 +16,3 @@ export default {
    }
 }
 </script>
-<style>
-   p{
-     margin:0;
-   }  
-</style>
