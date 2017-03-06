@@ -7,6 +7,7 @@
         <li><router-link :to="{ name: 'counter' }">counter</router-link></li>
         <li><router-link :to="{ name: 'func' }">func</router-link></li>
         <li><router-link :to="{ name: 'parent' }">parent</router-link></li>
+        <li><router-link :to="{ name: 'user' }">user</router-link></li>
     </ul>
     <div class="pages">
     <transition name="custom-classes-transition" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
@@ -28,8 +29,8 @@
     }
 </script>
 
-<style lang="sass">
-    @import '../assets/scss/global.css';
+<style>
+  
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;

@@ -5,6 +5,7 @@ import Counter from '../components/counter.vue';
 import Func from '../components/func.vue';
 import secondcomponent from '../components/second.vue';
 import Parent from '../components/parent.vue';
+import User from '../components/user.vue';
 /* ---- vue component ----- */
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
         { path: '/counter', name: 'counter', component: Counter },
         { path: '/func', name: 'func', component: Func },
         { path: '/parent', name: 'parent', component: Parent },
+        { path: '/user', name: 'user', component: User },
         { path: '/', redirect: { name: 'counter' } }
     ]
 })

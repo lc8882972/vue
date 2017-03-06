@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 import App from './components/app.vue';
 import store from './store';
 import router from './router';
-import * as filters from './filters'
+import * as filters from './filters';
+Vue.use(VueAxios, axios);
 // router.beforeEach((to, from, next) => {
 //   console.log(to);
 //   console.log(from);

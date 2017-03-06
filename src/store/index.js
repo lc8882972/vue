@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -7,7 +8,10 @@ Vue.use(Vuex)
 // each Vuex instance is just a single state tree.
 const state = {
   count: 0,
-  list: []
+  list: [],
+  user: {
+    name:''
+  }
 }
 
 // mutations are operations that actually mutates the state.
@@ -24,8 +28,11 @@ const mutations = {
     state.list.push(state.count);
     state.count--
   },
-  add(state,item) {
+  add(state, item) {
     state.list.push(item);
+  },
+  fetch(sate, data) {
+    state.user = data;
   }
 }
 
@@ -47,8 +54,16 @@ const actions = {
       }, 1000)
     })
   },
-  add(context,item) {
-    context.commit('add',item);
+  add(context, item) {
+    context.commit('add', item);
+  },
+  fetch({commit}) {
+    return axios.get(`http://localhost:5000/api/values`)
+      .then(response => {
+        let data = response.data || {};
+
+        commit('fetch', data);
+      })
   }
 }
 
