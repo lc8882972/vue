@@ -10,7 +10,9 @@ module.exports = {
       'vue',
       'vue-router',
       'vuex',
-      'vuex-router-sync'
+      'vuex-router-sync',
+      'jroll',
+      'jroll-vue-infinite'
     ]
   },
   output: {

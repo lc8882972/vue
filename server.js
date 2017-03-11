@@ -53,6 +53,10 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 60 * 60 * 24 * 30 : 0
 })
 
+app.use('/public', serve('./public'))
+app.use('/lib', serve('./lib'))
+app.use('/assets', serve('./assets'))
+app.use('/css', serve('./scss'))
 app.use('/dist', serve('./dist'))
 
 app.get('*', (req, res) => {

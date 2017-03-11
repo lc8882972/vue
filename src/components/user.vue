@@ -30,8 +30,8 @@
         },
         beforeMount:function(){
             console.log(this);
-            if(this.pageInit) return;
-            return this.$store.dispatch('fetch');
+            // if(this.pageInit) return;
+            // return this.$store.dispatch('fetch');
         },
         methods: {
 
@@ -39,5 +39,3 @@
     }
 
 </script>
-
-<style </style>

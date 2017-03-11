@@ -3,7 +3,7 @@ import { sync } from 'vuex-router-sync';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-import App from './components/app.vue';
+import App from './app.vue';
 import store from './store';
 import router from './router';
 import * as filters from './filters';
