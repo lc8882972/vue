@@ -12,7 +12,7 @@ module.exports = {
       'vuex',
       'vuex-router-sync',
       'jroll',
-      'jroll-vue-infinite'
+      'babel-polyfill'
     ]
   },
   output: {
@@ -23,12 +23,12 @@ module.exports = {
   resolve: {
     alias: {
       // 'public': path.resolve(__dirname, '../public')
+      '$':'http://cdn.bootcss.com/jquery/3.1.1/core.js'
     }
   },
   module: {
     noParse: /es6-promise\.js$/, // avoid webpack shimming process
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueConfig

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div class="pages">
+        <div class="pages" v-cloak>
             <transition name="custom-classes-transition" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
                 <router-view class="view"></router-view>
             </transition>
@@ -9,14 +9,32 @@
 </template>
 
 <script>
-    require('jroll');
-    require('../public/jroll-vue-infinite');
     export default {
         data() {
           return {
               msg:'hello'
           }
-        }
+        },
+          beforeMount(){
+            require('jroll');
+            require("babel-polyfill");
+        },
+        mounted() {
+            console.log('app.vue');
+            
+            var height = document.body.clientHeight - (lib.flexible.dpr * 100);
+            var mainElm = document.querySelector('.main');
+            mainElm.style.height = height + 'px';
+            // alert('clientHeight:'+document.body.clientHeight);
+            // alert('window.screen:'+window.screen.height + '; '+ window.screen.availHeight);
+            // window.addEventListener('reszie',function(){
+            //     alert(document.body.clientHeight);
+            // });
+
+            // window.addEventListener('orientationchange',function(){
+            //     alert(document.body.clientHeight);
+            // });
+        },
     }
 
 </script>

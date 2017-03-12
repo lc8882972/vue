@@ -1,9 +1,13 @@
 <template>
     <div>
-        <span>{{$store.state.user.name}}</li></span>
+
         <span>{{user.age}}</li></span>
          <span>{{sex}}</li></span>
+             <div>
+      <router-link :to="{ name: 'project'}" >project.vue </router-link>
     </div>
+    </div>
+
 </template>
 <script>
 
@@ -14,7 +18,7 @@
                 user: {
                     age: 18
                 },
-                sex:undefined
+                sex:null
             }
         },
         created() {
@@ -23,11 +27,11 @@
             //     this.name = response.data.name;
             // })
         },
-        preFetch(store){
-              return Promise.all([
-                  store.dispatch('fetch')
-              ])
-        },
+        // preFetch(store){
+        //       return Promise.all([
+        //           store.dispatch('fetch')
+        //       ])
+        // },
         beforeMount:function(){
             console.log(this);
             // if(this.pageInit) return;

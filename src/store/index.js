@@ -58,12 +58,12 @@ const actions = {
     context.commit('add', item);
   },
   fetch({commit}) {
-    return axios.get(`http://localhost:5000/api/values`)
-      .then(response => {
-        let data = response.data || {};
+    // return axios.get(`http://localhost:5000/api/values`)
+    //   .then(response => {
+    //     let data = response.data || {};
 
-        commit('fetch', data);
-      })
+    //     commit('fetch', data);
+    //   })
   }
 }
 
