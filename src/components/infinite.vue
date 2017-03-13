@@ -1,8 +1,8 @@
 <template>
   <div id="wrapper">
-    <ul id="scroller">
-      <slot></slot><li class="jroll-infinite-tip" v-html="tip"></li>
-    </ul>
+    <div id="scroller">
+    <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -16,7 +16,6 @@
       }
     },
     props: {
-      data: Array,
       pulldown:Function,
       pullup:Function
     },
@@ -34,18 +33,23 @@
           this.y < (this.maxScrollY + self.jroll.scroller.querySelector('.jroll-infinite-tip').offsetHeight) &&
           this.scrollerHeight > this.wrapperHeight && 
           typeof self.pullup === 'function') {
-            self.pullup.call(this);
+            self.pullup();
         }
       });
 
       if (typeof (self.pullup) === 'function'){
-        self.pullup.call(this);
+        self.pullup();
       }
     },
+    activated() {
+      console.log('activated');
+    },
+    beforeUpdate() {
+      console.log('beforeUpdate');
+    },
     updated () {
-      // if (options && typeof options.updated === 'function')
-      //   options.updated.call(this);
       this.jroll.refresh();
+      console.log('updated => infinite.vue');
     }
   
 }

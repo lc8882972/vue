@@ -10,7 +10,7 @@
 
 </template>
 <script>
-
+    //TODO 定义heaer,footer组件，引入scss,定义全局样式
     export default {
         data() {
             return {

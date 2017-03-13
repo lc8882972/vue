@@ -11,8 +11,11 @@
     </header>
     <div class="main">
       <keep-alive>
-        <jroll-infinite v-bind:data="list" v-bind:pullup="pullup">
-          <li v-for="item in list" >{{item}}</li>
+        <jroll-infinite v-bind:pullup="pullup">
+          <ul>
+            <li v-for="item in list" >{{item}}</li>
+            <li class="jroll-infinite-tip">正在加载中......</li>
+          </ul>          
         </jroll-infinite>
       </keep-alive>
     </div>
@@ -95,7 +98,7 @@ export default {
       console.log('activated');
     },
     updated() {
-
+      console.log('updated => project.vue');
     }
   }
 </script>
