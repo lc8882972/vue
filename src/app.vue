@@ -16,7 +16,7 @@
           }
         },
           beforeMount(){
-            require('jroll');
+            require('../public/jroll');
             require("babel-polyfill");
         },
         mounted() {
@@ -55,5 +55,5 @@
         width: 10rem;
         height: 100%;
     }
-    
+    /*[v-cloak] { display: none }*/
 </style>

@@ -10,10 +10,11 @@
         </a>
     </header>
     <div class="main">
-      <jroll-infinite v-bind:data="list" v-bind:pullup="pullup">
-       <input type="text" name='input'/>
-        <li v-for="item in list">{{item}}</li>
-       </jroll-infinite>
+      <keep-alive>
+        <jroll-infinite v-bind:data="list" v-bind:pullup="pullup">
+          <li v-for="item in list" >{{item}}</li>
+        </jroll-infinite>
+      </keep-alive>
     </div>
     <footer class="footer row">
     
@@ -44,7 +45,12 @@ import Infinite from '../components/infinite.vue'
 export default {
     data() {
       return {
-        list:['有一美人兮，见之不忘。', '凤飞翱翔兮，四海求凰。', '无奈佳人兮，不在东墙。', '将琴代语兮，聊写衷肠。', '何日见许兮，慰我彷徨。', '愿言配德兮，携手相将。', '不得於飞兮，使我沦亡。']
+        // list:['有一美人兮，见之不忘。', '凤飞翱翔兮，四海求凰。', '无奈佳人兮，不在东墙。', '将琴代语兮，聊写衷肠。', '何日见许兮，慰我彷徨。', '愿言配德兮，携手相将。', '不得於飞兮，使我沦亡。']
+      }
+    },
+    computed: {
+      list () {
+        return this.$store.state.list
       }
     },
     components: {
@@ -54,28 +60,30 @@ export default {
       
       pullup(){
         let self =this;
-        console.log(self);
         setTimeout(()=>{
-          self.list.push('有一美人兮，见之不忘。');
-          self.list.push('凤飞翱翔兮，四海求凰。');
-          self.list.push('无奈佳人兮，不在东墙。');
-          self.list.push('将琴代语兮，聊写衷肠。');
-          self.list.push('何日见许兮，慰我彷徨。');
-          self.list.push('愿言配德兮，携手相将。');
-          self.list.push('不得於飞兮，使我沦亡。');
-          self.list.push('有一美人兮，见之不忘。');
-          self.list.push('凤飞翱翔兮，四海求凰。');
-          self.list.push('无奈佳人兮，不在东墙。');
-          self.list.push('将琴代语兮，聊写衷肠。');
-          self.list.push('何日见许兮，慰我彷徨。');
-          self.list.push('愿言配德兮，携手相将。');
-          self.list.push('不得於飞兮，使我沦亡。');
-          self.list.push('有一美人兮，见之不忘。');
+          var list =[];
+          list.push('有一美人兮，见之不忘。');
+          list.push('凤飞翱翔兮，四海求凰。');
+          list.push('无奈佳人兮，不在东墙。');
+          list.push('将琴代语兮，聊写衷肠。');
+          list.push('何日见许兮，慰我彷徨。');
+          list.push('愿言配德兮，携手相将。');
+          list.push('不得於飞兮，使我沦亡。');
+          list.push('有一美人兮，见之不忘。');
+          list.push('凤飞翱翔兮，四海求凰。');
+          list.push('无奈佳人兮，不在东墙。');
+          list.push('将琴代语兮，聊写衷肠。');
+          list.push('何日见许兮，慰我彷徨。');
+          list.push('愿言配德兮，携手相将。');
+          list.push('不得於飞兮，使我沦亡。');
+          list.push('有一美人兮，见之不忘。');
+
+          self.$store.dispatch('rest', list);
         },200)
       }
     },
     beforeMount() {
-      console.log(Infinite);
+      // console.log(Infinite);
     },
     mounted() {
       console.log('project.vue');

@@ -8,7 +8,7 @@ Vue.use(Vuex)
 // each Vuex instance is just a single state tree.
 const state = {
   count: 0,
-  list: [],
+  list:[],
   user: {
     name:''
   }
@@ -31,8 +31,11 @@ const mutations = {
   add(state, item) {
     state.list.push(item);
   },
-  fetch(sate, data) {
+  fetch(state, data) {
     state.user = data;
+  },
+  rest(state,data){
+    state.list = state.list.concat(data);
   }
 }
 
@@ -64,6 +67,9 @@ const actions = {
 
     //     commit('fetch', data);
     //   })
+  },
+  rest({commit},data){
+    commit('rest',data)
   }
 }
 
