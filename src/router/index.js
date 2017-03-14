@@ -5,7 +5,7 @@ import Counter from '../components/counter.vue';
 // import Func from '../components/func.vue';
 // import secondcomponent from '../components/second.vue';
 // import Parent from '../components/parent.vue';
-import User from '../components/user.vue';
+import User from '../views/user.vue';
 import Project from '../views/project.vue';
 /* ---- vue component ----- */
 Vue.use(Router)

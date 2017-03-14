@@ -1,15 +1,24 @@
 <template>
-    <div>
-
-        <span>{{user.age}}</li></span>
-         <span>{{sex}}</li></span>
-             <div>
-      <router-link :to="{ name: 'project'}" >project.vue </router-link>
+    <div class="container">
+        <default-header></default-header>
+        <div class="main">
+            <span>{{user.age}}</li></span>
+            <span>{{sex}}</li></span>
+            <div>
+                <router-link :to="{ name: 'project'}">project.vue </router-link>
+            </div>
+            <div>
+                <form>
+                    <input type="text" name='name'/>
+                </form>
+            </div>
+        </div>
+        <tabbar></tabbar>
     </div>
-    </div>
-
 </template>
 <script>
+    import Header from '../components/header.vue';
+    import Tabbar from '../components/tabbar.vue';
     //TODO 定义heaer,footer组件，引入scss,定义全局样式
     export default {
         data() {
@@ -18,7 +27,7 @@
                 user: {
                     age: 18
                 },
-                sex:null
+                sex: null
             }
         },
         created() {
@@ -32,14 +41,18 @@
         //           store.dispatch('fetch')
         //       ])
         // },
-        beforeMount:function(){
-            console.log(this);
+        beforeMount: function () {
+            // console.log(this);
             // if(this.pageInit) return;
             // return this.$store.dispatch('fetch');
         },
         methods: {
 
-        }
+        },
+        components: {
+            'default-header': Header,
+            'tabbar':Tabbar
+        },
     }
 
 </script>

@@ -1,0 +1,32 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+  }
+  
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+.main {
+    position: fixed;
+    top: 100px; /*px*/
+    bottom: 100px ;/*px*/
+    width: 100%;
+    height: 85%;
+  }
+
+.row{
+  display: flex;
+}
+
+.col{
+  flex: 1;
+}
+
+.icon{
+  font-size:48px;
+  color: #333;      
+}
