@@ -8,11 +8,6 @@ import store from './store';
 import router from './router';
 import * as filters from './filters';
 Vue.use(VueAxios, axios);
-// router.beforeEach((to, from, next) => {
-//   console.log(to);
-//   console.log(from);
-//   next();
-// })
 
 sync(store, router);
 

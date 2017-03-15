@@ -10,6 +10,12 @@ import Project from '../views/project.vue';
 /* ---- vue component ----- */
 Vue.use(Router)
 
+// router.beforeEach((to, from, next) => {
+//   console.log(to);
+//   console.log(from);
+//   next();
+// })
+
 // scrollBehavior:
 // - only available in html5 history mode
 // - defaults to no scroll behavior

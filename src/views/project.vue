@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <default-header></default-header>
+    <!--<default-header></default-header>-->
     <div class="main">
       <keep-alive>
         <jroll-infinite v-bind:pullup="pullup">
@@ -11,7 +11,7 @@
         </jroll-infinite>
       </keep-alive>
     </div>
-    <tabbar></tabbar>
+    <!--<tabbar></tabbar>-->
   </div>
 </template>
 
@@ -78,7 +78,6 @@
       console.log('updated => project.vue');
     }
   }
-
 </script>
 <style>
   ul {
