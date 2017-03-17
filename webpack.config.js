@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/client-entry.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -16,7 +16,7 @@ module.exports = {
         options: {
           // vue-loader options go here
         }
-      },           
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',

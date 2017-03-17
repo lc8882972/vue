@@ -4,32 +4,41 @@
     <div class="main">
 
       <tabs>
-        <tab-item>
-                <span>{{user.age}}</li></span>
-      <span>{{sex}}</li></span>
-
-      <div>
-        <router-link :to="{ name: 'project'}">project.vue </router-link>
-      </div>
-      <div>
-          <form>
-            <input type="text" name='name'/>
-          </form>
-      </div>
+        <tab-body>
+          <tab-item>
+          <div>
+            <router-link :to="{ name: 'project'}">project.vue </router-link>
+          </div>
+          <div>
+            <form>
+              <input type="text" name='name'/>
+            </form>
+          </div>
         </tab-item>
         <tab-item>2</tab-item>
         <tab-item>3</tab-item>
+        <tab-item>4</tab-item>
+        </tab-body>
+        <tab-footer>
+          <a>1</a>
+          <a>2</a>
+          <a>3</a>
+          <a>4</a>
+        </tab-footer>
+        <!--<tabbar></tabbar>-->
       </tabs>
     </div>
-  <!--<tabbar></tabbar>-->
+
   </div>
+
 </template>
 <script>
   import Header from '../components/header.vue';
   import Tabbar from '../components/tabbar.vue';
   import Tabs from '../modules/tabs/tabs.vue';
   import TabItem from '../modules/tabs/item.vue';
-
+  import TabBody from '../modules/tabs/body.vue';
+  import TabFooter from '../modules/tabs/tabbar.vue';
   //TODO 定义heaer,footer组件，引入scss,定义全局样式
   export default {
     data() {
@@ -64,7 +73,9 @@
       'default-header': Header,
       'tabbar': Tabbar,
       'tabs': Tabs,
-      'tab-item': TabItem
+      'tab-item': TabItem,
+      'tab-body':TabBody,
+      'tab-footer' :TabFooter
     },
   }
 </script>

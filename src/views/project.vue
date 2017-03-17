@@ -11,8 +11,9 @@
         </jroll-infinite>
       </keep-alive>
     </div>
-    <!--<tabbar></tabbar>-->
+    <tabbar></tabbar>
   </div>
+
 </template>
 
 <script>
@@ -86,13 +87,13 @@
     font-size: 28px;
     /*px*/
   }
-  
+
   li {
     line-height: 48px;
     margin-left: 48px;
     text-align: center;
   }
-  
+
   #wrapper {
     position: relative;
     z-index: 1;

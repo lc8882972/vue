@@ -5,7 +5,7 @@
       <transition name="custom-classes-transition" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
         <router-view class="view"></router-view>
       </transition>
-      <tabbar></tabbar>
+
     </div>
   </div>
 </template>
@@ -56,7 +56,7 @@
     width: 10rem;
     height: 100%;
   }
-  
+
   .pages {
     width: 10rem;
     height: 100%;
