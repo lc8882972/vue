@@ -23,7 +23,7 @@ module.exports = {
   resolve: {
     alias: {
       // 'public': path.resolve(__dirname, '../public')
-      '$':'http://cdn.bootcss.com/jquery/3.1.1/core.js'
+      // '$':'http://cdn.bootcss.com/jquery/3.1.1/core.js'
     }
   },
   module: {
