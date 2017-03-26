@@ -68,7 +68,7 @@ app.get('*', (req, res) => {
   if (!renderer) {
     return res.end('waiting for compilation... refresh in a moment.')
   }
-
+  console.log(req.url);
   res.setHeader("Content-Type", "text/html")
   res.setHeader("Server", serverInfo)
 
