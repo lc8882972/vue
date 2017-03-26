@@ -15,7 +15,7 @@
   }
 
 </script>
-<style>
+<style lang="sass">
   .header {
     display: flex;
     align-items: center;

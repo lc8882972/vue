@@ -24,7 +24,7 @@
     }
   }
 </script>
-<style>
+<style lang="sass">
   .tabs {
     position: relative;
     width: 100%;

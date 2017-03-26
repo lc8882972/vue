@@ -1,8 +1,9 @@
 const path = require('path')
 const vueConfig = require('./vue-loader.config')
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  devtool: '#source-map',
+  devtool: isProd ? false : '#source-map',
   entry: {
     app: './src/client-entry.js',
     vendor: [

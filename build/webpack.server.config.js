@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const base = require('./webpack.base.config');
 
-module.exports = Object.assign({}, base, {
+const config = Object.assign({}, base, {
   target: 'node',
   devtool: false,
   entry: './src/server-entry.js',
@@ -17,3 +17,16 @@ module.exports = Object.assign({}, base, {
     })
   ]
 })
+
+// if (process.env.NODE_ENV === 'production') {
+//   config.plugins.push(
+//     // minify JS
+//     new webpack.optimize.UglifyJsPlugin({
+//       compress: {
+//         warnings: false
+//       }
+//     })
+//   )
+// }
+
+module.exports = config

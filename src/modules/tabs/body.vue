@@ -8,7 +8,7 @@
 
   }
 </script>
-<style>
+<style lang="sass">
   .tabbody {
     display: flex;
     position: relative;

@@ -34,14 +34,24 @@ if (process.env.NODE_ENV === 'production') {
   // here we overwrite the loader config for <style lang="stylus">
   // so they are extracted.
   vueConfig.loaders = {
-    stylus: ExtractTextPlugin.extract({
-      loader: 'css-loader!stylus-loader',
+    css: ExtractTextPlugin.extract({
+      use: 'css-loader',
+      fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader
+    }),
+    sass: ExtractTextPlugin.extract({
+      use: 'css-loader!sass-loader',
       fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader
     })
   }
 
   config.plugins.push(
     new ExtractTextPlugin('styles.[hash].css'),
+    // minify JS
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     // this is needed in webpack 2 for minifying CSS
     new webpack.LoaderOptionsPlugin({
       minimize: true

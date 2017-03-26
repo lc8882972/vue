@@ -24,7 +24,7 @@
   }
 
 </script>
-<style>
+<style lang="sass">
   .tabbar {
     position: fixed;
     display: flex;

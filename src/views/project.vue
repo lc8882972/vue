@@ -80,12 +80,11 @@
     }
   }
 </script>
-<style>
+<style lang="sass">
   ul {
     margin: 0;
     padding: 0;
-    font-size: 28px;
-    /*px*/
+    font-size: 28px;/*px*/
   }
 
   li {

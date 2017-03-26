@@ -8,7 +8,7 @@
 
   }
 </script>
-<style>
+<style lang="sass">
   .tabfooter{
     display:flex;
     width: 100%;
