@@ -32,34 +32,17 @@
       var mainElm = document.querySelector('.main');
       mainElm.style.height = height + 'px';
       console.log('mounted => app.vue');
-      // alert('clientHeight:'+document.body.clientHeight);
-      // alert('window.screen:'+window.screen.height + '; '+ window.screen.availHeight);
-      // window.addEventListener('reszie',function(){
-      //     alert(document.body.clientHeight);
-      // });
-
-      // window.addEventListener('orientationchange',function(){
-      //     alert(document.body.clientHeight);
-      // });
     },
   }
 </script>
 
 <style lang="sass">
-  @import "./scss/global.scss";
-  @import "./scss/layout.scss";
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    width: 10rem;
-    height: 100%;
-  }
+  @import "./style/global.scss";
+  @import "./style/layout.scss";
 
   .pages {
     width: 10rem;
     height: 100%;
   }
-  /*[v-cloak] { display: none }*/
+  [v-cloak] { display: none }
 </style>

@@ -2,6 +2,10 @@ const path = require('path')
 const vueConfig = require('./vue-loader.config')
 const isProd = process.env.NODE_ENV === 'production'
 
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   devtool: isProd ? false : '#source-map',
   entry: {
@@ -22,9 +26,10 @@ module.exports = {
     filename: '[name].[chunkhash].js'
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
-      // 'public': path.resolve(__dirname, '../public')
-      // '$':'http://cdn.bootcss.com/jquery/3.1.1/core.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src')
     }
   },
   module: {
@@ -40,16 +45,17 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           objectAssign: 'Object.assign'
-        }
+        },
+        include: [resolve('src')]
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10240,
-          name: '[name].[ext]?[hash]'
+          limit: 5120,
+          name: 'img/[name].[hash:7].[ext]'
         }
-      }
+      },
     ]
   },
   performance: {

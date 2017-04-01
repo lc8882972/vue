@@ -3,8 +3,17 @@ const base = require('./webpack.base.config')
 const vueConfig = require('./vue-loader.config')
 const HTMLPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const outputPath =require('../config')
+
+const isProd = process.env.NODE_ENV === 'production' ? true : false
 
 const config = Object.assign({}, base, {
+  output: {
+    path: isProd ? outputPath.prod.client.path  : outputPath.dev.path,
+    publicPath: isProd ? outputPath.prod.client.publicPath  : outputPath.dev.publicPath,
+    filename: '[name].[chunkhash].js'
+  },
   resolve: {
     alias: Object.assign({}, base.resolve.alias, {
 

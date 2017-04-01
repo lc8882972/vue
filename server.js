@@ -54,9 +54,7 @@ const serve = (path, cache) => express.static(resolve(path), {
 })
 
 app.use('/public', serve('./public'))
-app.use('/lib', serve('./lib'))
 app.use('/assets', serve('./assets'))
-app.use('/css', serve('./scss'))
 app.use('/dist', serve('./dist'))
 const apiProxy = proxy('/api', {
   target: 'http://localhost:8080',
