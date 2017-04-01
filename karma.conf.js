@@ -1,22 +1,21 @@
 // Karma configuration
 // Generated on Fri Feb 10 2017 16:59:14 GMT+0800 (中国标准时间)
-var webpack = require('webpack');
+// var webpack = require('webpack');
 
 module.exports = function(config) {
 
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['mocha','chai'],
 
     // list of files / patterns to load in the browser
 
     files: [
-      'test/*.spec.js',
-      'main.js'
+      'test/*.spec.js'
     ],
 
     // list of files to exclude
@@ -27,8 +26,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/*.spec.js': ['webpack', 'coverage']
-
+      'test/*.spec.js': ['coverage']
     },
 
     // optionally, configure the reporter
@@ -36,7 +34,6 @@ module.exports = function(config) {
       type: 'html',
       dir: 'coverage/'
     },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -67,46 +64,43 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
-    webpack: {
-      module: {
-        noParse: /es6-promise\.js$/, // avoid webpack shimming process
-        rules: [{
-            test: /\.vue$/,
-            loader: 'vue-loader',
-            options: [
-              require('postcss-px2rem')({ remUnit: 75, baseDpr: 2 }),
-              require('autoprefixer')({
-                browsers: ['ios >=8', 'android >=4.0']
-              })
-            ]
-          },
-          {
-            test: /\.js$/,
-            loader: 'buble-loader',
-            exclude: /node_modules/,
-            options: {
-              objectAssign: 'Object.assign'
-            }
-          },
-          {
-            test: /\.(png|jpg|gif|svg)$/,
-            loader: 'url-loader',
-            options: {
-              limit: 10240,
-              name: '[name].[ext]?[hash]'
-            }
-          }
-        ]
-      },
-      devtool: '#inline-source-map'
-    },
-
-    webpackMiddleware: {
-      // webpack-dev-middleware configuration
-      // i. e.
-      stats: 'errors-only'
-    }
-
+    // webpack: {
+    //   module: {
+    //     noParse: /es6-promise\.js$/, // avoid webpack shimming process
+    //     rules: [{
+    //         test: /\.vue$/,
+    //         loader: 'vue-loader',
+    //         options: [
+    //           require('postcss-px2rem')({ remUnit: 75, baseDpr: 2 }),
+    //           require('autoprefixer')({
+    //             browsers: ['ios >=8', 'android >=4.0']
+    //           })
+    //         ]
+    //       },
+    //       {
+    //         test: /\.js$/,
+    //         loader: 'buble-loader',
+    //         exclude: /node_modules/,
+    //         options: {
+    //           objectAssign: 'Object.assign'
+    //         }
+    //       },
+    //       {
+    //         test: /\.(png|jpg|gif|svg)$/,
+    //         loader: 'url-loader',
+    //         options: {
+    //           limit: 10240,
+    //           name: '[name].[ext]?[hash]'
+    //         }
+    //       }
+    //     ]
+    //   },
+    //   devtool: '#inline-source-map'
+    // },
+    // webpackMiddleware: {
+    //   // webpack-dev-middleware configuration
+    //   // i. e.
+    //   stats: 'errors-only'
+    // }
   })
-
 }

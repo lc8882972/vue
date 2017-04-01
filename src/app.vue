@@ -13,6 +13,13 @@
 <script>
   import Header from './components/header.vue';
   import Tabbar from './components/tabbar.vue';
+
+  let isServer = process.env.VUE_ENV === 'server';
+  console.log(process.env.VUE_ENV);
+  if (!isServer) {
+    require('../public/jroll');
+    require("babel-polyfill");
+  }
   export default {
     components: {
       'default-header': Header,
@@ -24,8 +31,7 @@
       }
     },
     beforeMount() {
-      require('../public/jroll');
-      require("babel-polyfill");
+
     },
     mounted() {
       var height = document.body.clientHeight - (lib.flexible.dpr * 100);

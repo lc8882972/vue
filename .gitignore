@@ -5,3 +5,6 @@ dist/
 # log
 *.log
 *.log.*
+
+# 页面测试覆盖率
+coverage/
