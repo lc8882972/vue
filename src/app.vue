@@ -11,15 +11,17 @@
 </template>
 
 <script>
-  import Header from './components/header.vue';
-  import Tabbar from './components/tabbar.vue';
+  import Header from './components/header.vue'
+  import Tabbar from './components/tabbar.vue'
+  import Logger from './scripts/log.js'
+  let isServer = process.env.VUE_ENV === 'server'
 
-  let isServer = process.env.VUE_ENV === 'server';
-  console.log(process.env.VUE_ENV);
   if (!isServer) {
     require('../public/jroll');
     require("babel-polyfill");
   }
+
+  Logger.log(isServer);
   export default {
     components: {
       'default-header': Header,
@@ -34,10 +36,7 @@
 
     },
     mounted() {
-      var height = document.body.clientHeight - (lib.flexible.dpr * 100);
-      var mainElm = document.querySelector('.main');
-      mainElm.style.height = height + 'px';
-      console.log('mounted => app.vue');
+      Logger.log('mounted => app.vue');
     },
   }
 </script>

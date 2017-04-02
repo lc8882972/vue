@@ -84,13 +84,10 @@
 </script>
 
 <style>
-  .item:first-child{
-    background:#d4d4d4;
-  }
-  
   .blogo{
     width:200px;
     height:200px;
-    background:url(/assets/logo.png);
+    background:url('../assets/logo.png');
+    background-size:cover    
   }
 </style>

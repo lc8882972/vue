@@ -1,13 +1,14 @@
 const path = require('path')
 const vueConfig = require('./vue-loader.config')
 const isProd = process.env.NODE_ENV === 'production'
+const utils = require('./utils')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
-  devtool: isProd ? false : '#source-map',
+  devtool: isProd ? false : '#cheap-module-source-map',
   entry: {
     app: './src/client-entry.js',
     vendor: [
@@ -28,8 +29,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
   module: {
@@ -53,7 +53,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 5120,
-          name: 'img/[name].[hash:7].[ext]'
+          name:utils.assetsPath('[name].[hash:8].[ext]')
         }
       },
     ]
