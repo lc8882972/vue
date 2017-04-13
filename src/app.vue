@@ -48,6 +48,7 @@
   .pages {
     width: 10rem;
     height: 100%;
+    
   }
   [v-cloak] { display: none }
 </style>

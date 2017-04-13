@@ -88,6 +88,7 @@
     width:200px;
     height:200px;
     background:url('../assets/logo.png');
-    background-size:cover    
+    background-size:cover;
+    background-repeat: no-repeat;    
   }
 </style>

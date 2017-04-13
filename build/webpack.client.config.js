@@ -1,4 +1,4 @@
-const path =require('path')
+const path = require('path')
 const webpack = require('webpack')
 const base = require('./webpack.base.config')
 const vueConfig = require('./vue-loader.config')
@@ -82,9 +82,8 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-        // copy custom static assets
-    new CopyWebpackPlugin([
-      {
+    // copy custom static assets
+    new CopyWebpackPlugin([{
         from: path.resolve(__dirname, '../public'),
         to: outputPath.prod.client.path + '/public',
         toType: 'dir',
